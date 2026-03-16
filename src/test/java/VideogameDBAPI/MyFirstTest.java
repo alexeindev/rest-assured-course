@@ -1,17 +1,18 @@
 package VideogameDBAPI;
 
+import VideogameDBAPI.config.TestConfig;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class MyFirstTest {
+public class MyFirstTest extends TestConfig {
 
     @Test
     public void myFirstTest() {
         given()
                 .log().all()
                 .when()
-                .get("https://videogamedb.uk/api/videogame")
+                .get("/videogame")
                 .then()
                 .log().all();
 
